@@ -11,7 +11,7 @@ namespace ConcoleUI
             CarManager carManager = new CarManager(new InMemoryCarDal());
             foreach (var item in carManager.GetAll())
             {
-                Console.WriteLine(item.Description);
+                Console.WriteLine(item.ColorId);
             }
         }
     }
