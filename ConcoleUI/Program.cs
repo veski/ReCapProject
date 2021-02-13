@@ -1,4 +1,5 @@
 ﻿using Business.Concrete;
+using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.InMemory;
 using System;
 
@@ -8,10 +9,12 @@ namespace ConcoleUI
     {
         static void Main(string[] args)
         {
-            CarManager carManager = new CarManager(new InMemoryCarDal());
-            foreach (var item in carManager.GetAll())
+            CarManager carManager = new CarManager(new EfCarDal());
+            foreach (var car in carManager.GetCarDetails())
             {
-                Console.WriteLine(item.ColorId);
+                Console.WriteLine(car.BrandName );
+                Console.WriteLine(car.Description);
+                Console.WriteLine("-------------------");
             }
         }
     }
